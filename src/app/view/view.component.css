@@ -1,0 +1,38 @@
+img{
+    max-width: 25%;
+    margin-bottom: 50px;
+    margin-right:20%;
+}
+h1{
+    margin-left: 40%; 
+    font-weight: bold;
+}
+.details{
+    margin-left: 30%px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+footer{
+    padding-bottom: 20px
+}
+li{
+    list-style:none;
+}
+.h3{
+    color: rgb(44, 8, 225);
+    font-weight: bold;
+}
+
+.hero{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.title{
+    font-size: 25px;
+    color: blue;
+    font-weight: bold;
+    margin-bottom: 50px;
+}

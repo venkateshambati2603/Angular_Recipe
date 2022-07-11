@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&family=Roboto:ital,wght@1,300&display=swap');
+/* input{
+border: 2px solid black;
+} */
+
+.search{
+  margin-top: 30px;
+  float: right;
+  margin-right: 20px;
+}
+h1{
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 43%;
+  color: maroon;
+  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.title{
+  font-weight: bold;
+  color: black;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
+}
+.card:hover{
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+datalist::-webkit-calendar-picker-indicator {
+  opacity: 10px;
+}
+
+.card{
+  width: 20%;
+  height: 40%;
+  margin-left: 130px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}

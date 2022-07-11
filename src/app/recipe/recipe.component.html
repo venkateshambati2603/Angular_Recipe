@@ -1,0 +1,25 @@
+<div class="search">
+    <input matInput type="text" placeholder="Search" list="dataListOption" [(ngModel)]="searchedKeyword">
+    <datalist id="dataListOption">
+        <option  *ngFor="let data of searchDropdown"  [value]="data.title"></option>
+    </datalist>
+</div>
+
+<h1>Recipes</h1>
+
+<div class="container d-flex flex-wrap">
+    <mat-card class="card" *ngFor="let data of obs | async | filter:searchedKeyword | paginate: { itemsPerPage: 12, currentPage: p}">
+        <mat-card-title class="title">{{data.title}}</mat-card-title>
+        <img mat-card-image [routerLink]="['/','view', data.id]" [src]="data.image" alt="cuisines">
+        <!-- <mat-card-subtitle class="title">{{data.calories}}</mat-card-subtitle> -->
+    </mat-card>
+
+    <!-- <mat-paginator [length]="searchedKeyword"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+    </mat-paginator> -->
+</div>
+<pagination-controls style="float:right;" (pageChange)="p = $event">
+</pagination-controls>
+<footer style="margin-bottom: 50px;"></footer>

@@ -1,0 +1,87 @@
+<app-loader></app-loader>
+<div class="container hero"  *ngIf="view">
+    <!-- <h1 style="margin-left: 30%; font-weight: bold;">Diet</h1> -->
+    <img src="{{view.image}}" class="img-thumbnail">
+    <span>
+        <h3 class="title">Title: {{view.title}}</h3>       
+    </span>
+</div> 
+<!-- <div class="container"  *ngIf="view">
+</div> -->
+
+<div class="container"  *ngIf="view">
+    <h1>Ingredients</h1>
+    <table class="table">
+        <tr>
+            <th style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Name</th>
+            <th style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Original Name</th>
+            <th style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Consistency</th>
+            <th style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Amount</th>
+            <th style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Measures</th>
+        </tr>
+        <tr *ngFor="let data of view.extendedIngredients">
+            <th>{{data.name}}</th>
+            <th>{{data.originalName}} </th>
+            <th>{{data.consistency}}</th>
+            <th>{{data.amount}}</th>
+            <th>{{data.measures.metric.amount}} {{data.measures.metric.unitShort}}</th>
+        </tr>
+    </table>
+</div>
+
+                                            <h1 >Details</h1>
+<div class="container details" *ngIf="view">
+    <div>
+        <ul>
+            <h3 style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Cuisine</h3>
+            <div *ngIf="view.cuisines.length !== 0">
+                <li *ngFor="let data of view.cuisines">{{data}} </li>
+            </div>
+            <div *ngIf="view.cuisines.length === 0">--</div>
+        </ul>       
+    </div>
+    <div>
+        <ul>
+            <h3 style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Source Name</h3>
+                <li>{{view.sourceName}}</li>
+        </ul>       
+    </div>
+    <div>
+        <ul>
+            <h3 style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Gluten Free</h3>
+                <li >{{view.glutenFree}}</li>
+        </ul>       
+    </div>
+    <div>
+        <ul>
+            <h3 style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Price Per Serving</h3>
+                <li >{{view.pricePerServing}}</li>
+        </ul>       
+    </div>
+    <div>
+        <ul>
+            <h3 style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Ready In Minutes</h3>
+                <li >{{view.readyInMinutes}}</li>
+        </ul>       
+    </div>
+    <div>
+        <ul>
+            <h3 style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Diets</h3>
+                <li *ngFor="let data of view.diets">{{data}}</li>
+        </ul>       
+    </div>
+    <div>
+        <ul>
+            <h3 style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;">Dish Types</h3>
+                <li *ngFor="let data of view.dishTypes">{{data}}</li>
+        </ul>       
+    </div>
+</div>
+
+<div class="container" *ngIf="view">
+    <strong style="font-size: 20px;">Summary :</strong><div [innerHtml]="view.summary">
+    </div>
+</div>
+        <!-- <li style="color: rgb(44, 8, 225);font-weight: bold;font-size: medium;"></li> -->
+
+<footer></footer>
