@@ -25,8 +25,7 @@ export class ViewComponent implements OnInit {
     });
     this.service.getSingleView(this.id).subscribe((response) => {
       this.view=response
-      console.log(this.view);
-    
+      console.log(this.view)
     });
   }
 }

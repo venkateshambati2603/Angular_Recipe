@@ -1,5 +1,5 @@
 <div class="search">
-    <input matInput type="text" placeholder="Search" list="dataListOption" [(ngModel)]="searchedKeyword"  (ngModelChange)="searchFunc($event)" >
+    <input matInput type="text" placeholder="Search" list="dataListOption"  [(ngModel)]="searchedKeyword"  (ngModelChange)="searchFunc($event)" >
     <datalist id="dataListOption">
         <option  *ngFor="let data of searchDropdown"  [value]="data.title"></option>
     </datalist>
@@ -9,7 +9,7 @@
 <div *ngIf="obs" class="container d-flex flex-wrap">
     <mat-card class="card" *ngFor="let data of searchResults | filter:searchedKeyword | paginate: { itemsPerPage: 12, currentPage: p}">
         <mat-card-title class="title">{{data.title}}</mat-card-title>
-        <img mat-card-image [routerLink]="['/','view', data.id]" [src]="data.image" alt="cuisines">
+        <img *ngIf="obs" mat-card-image [routerLink]="['/','view', data.id]" [src]="data.image" >
     </mat-card>
 </div>
 <pagination-controls style="float:right;" (pageChange)="p = $event">

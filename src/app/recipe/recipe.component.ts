@@ -19,6 +19,8 @@ export class RecipeComponent implements OnInit {
   show = false;
   searchResults=[]
   timeout: any =null
+  cuisine:any
+  res!: any;
   open() {
     this.show = true
 }
@@ -38,40 +40,31 @@ clear() {
   ) {}
 
   fetchResults(symbol:any) {
-    if (!symbol) this.hide();
-    this.http.get<any>(`https://api.spoonacular.com/recipes/autocomplete?number=10&query=${symbol}&apiKey=${this.service.apiKey}`).subscribe(data =>{
-      console.log(data)
-      this.searchResults = data;
+    // if (!symbol) this.hide();
+    this.http.get<any>(`${this.service.url_}/complexSearch?apiKey=${this.service.apiKey}&number=10&query=${symbol}`).subscribe(data =>{
+      this.searchResults = data.results;
+      console.log(this.searchResults)
     })
   }
+ 
   ngOnInit(): void {
     this.changeDetectorRef.detectChanges();
-    this.service.getRecipe().subscribe((data: any) => {
+    this.service.getRecipe(this.res).subscribe((data: any) => {
       this.datasource.data = data.results;
       this.searchDropdown = data.results;
       this.searchResults =data.results;
       this.obs = this.datasource.connect();
       // console.log(this.searchDropdown)
     });
-    this.datasource.paginator = this.paginator;
     // this.fetchResults(this.searchedKeyword)
+    this.datasource.paginator = this.paginator;
   }
 
 
   searchFunc(val:any){
     this.searchedKeyword=val;
     console.log(val);
-    if(val != ''){
-      clearTimeout(this.timeout)
-      this.timeout = setTimeout(() => {
-        this.show = true
-
-        this.fetchResults(this.searchedKeyword)
-
-      }, 500);
-  } else {
-    this.obs;
-    // this.hide();
-  }
+    if(val != '')
+    this.fetchResults(this.searchedKeyword)
 }
 }
