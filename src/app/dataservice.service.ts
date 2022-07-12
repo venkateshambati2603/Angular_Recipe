@@ -8,28 +8,30 @@ import { UserInformation } from './interface/result';
 })
 export class DataserviceService {
 
-  apiKey='e5bc6655f2d34025b055d1013ac2fe6e'
+  apiKey='ddf18f7264e0431d93e8539df9295884'
   
   constructor(private http: HttpClient) { }
   
   url_ ="https://api.spoonacular.com/recipes"
   cuisine ='';
-  users:any= []
+  searchData:any= []
   id!: number
+  res!:string
+
   getRecipe(){
     // this.cuisine = data;
     console.log(this.cuisine);
-    return this.http.get(`${this.url_}/complexSearch?apiKey=${this.apiKey}&cuisine=${this.cuisine}&number=60`);
+    return this.http.get(`${this.url_}/complexSearch?apiKey=${this.apiKey}&cuisine=${this.cuisine}&number=100`);
     
     // return this.http.get(this.url_)
   }
   
   getSingleView(id: number): Observable<UserInformation> {
     let queryParams = new HttpParams();
-    return this.http.get<UserInformation>(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${this.apiKey}`,{ params: queryParams });
-    
+    return this.http.get<UserInformation>(`${this.url_}/${id}/information?includeNutrition=false&apiKey=${this.apiKey}`,{ params: queryParams });
+     
   }
-  
+
 }
 
 // apikey=e5bc6655f2d34025b055d1013ac2fe6e

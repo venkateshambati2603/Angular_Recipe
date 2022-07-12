@@ -1,21 +1,21 @@
+.hero{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
 img{
     max-width: 25%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-right:20%;
 }
 h1{
-    margin-left: 40%; 
+    margin-left: 50%; 
     font-weight: bold;
 }
 .details{
-    margin-left: 30%px;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     flex-wrap: wrap;
-}
-footer{
-    padding-bottom: 20px
 }
 li{
     list-style:none;
@@ -25,11 +25,7 @@ li{
     font-weight: bold;
 }
 
-.hero{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-}
+
 .title{
     font-size: 25px;
     color: blue;

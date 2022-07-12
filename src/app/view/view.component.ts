@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataserviceService } from '../dataservice.service';
 import { UserInformation } from '../interface/result';
-import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-view',
