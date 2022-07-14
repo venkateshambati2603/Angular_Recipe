@@ -11,25 +11,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./recipe.component.css'],
 })
 export class RecipeComponent implements OnInit {
-  searchedKeyword = '';
+  searchedKeyword:string='';
   p: number = 1;
   datasource: MatTableDataSource<any> = new MatTableDataSource<any>();
   obs!: Observable<any>;
   searchDropdown: any;
   show = false;
   searchResults=[]
-  timeout: any =null
-  cuisine:any
+  // timeout: any =null
+  // cuisine:any
   res!: any;
-  open() {
-    this.show = true
-}
-clear() {
-  this.searchedKeyword = ''
-}
-  hide() {
-    this.show = false
-  }
   
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -39,19 +30,20 @@ clear() {
     private changeDetectorRef: ChangeDetectorRef
   ) {}
 
-  fetchResults(symbol:any) {
+  fetchResults(symbol:string) {
     // if (!symbol) this.hide();
     this.http.get<any>(`${this.service.url_}/complexSearch?apiKey=${this.service.apiKey}&number=10&query=${symbol}`).subscribe(data =>{
       this.searchResults = data.results;
-      console.log(this.searchResults)
+      this.searchDropdown = data.results;
+      console.log(this.searchDropdown)
     })
   }
  
   ngOnInit(): void {
     this.changeDetectorRef.detectChanges();
-    this.service.getRecipe(this.res).subscribe((data: any) => {
+    this.service.getRecipe(this.res).subscribe((data:any) => {
       this.datasource.data = data.results;
-      this.searchDropdown = data.results;
+      
       this.searchResults =data.results;
       this.obs = this.datasource.connect();
       // console.log(this.searchDropdown)
@@ -59,12 +51,9 @@ clear() {
     // this.fetchResults(this.searchedKeyword)
     this.datasource.paginator = this.paginator;
   }
-
-
-  searchFunc(val:any){
+  
+  searchFunc(val:string){
     this.searchedKeyword=val;
-    console.log(val);
-    if(val != '')
     this.fetchResults(this.searchedKeyword)
 }
 }

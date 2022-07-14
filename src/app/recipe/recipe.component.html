@@ -12,5 +12,6 @@
         <img *ngIf="obs" mat-card-image [routerLink]="['/','view', data.id]" [src]="data.image" >
     </mat-card>
 </div>
-<pagination-controls style="float:right;" (pageChange)="p = $event">
+<pagination-controls class="paginator" style="float:right;" (pageChange)="p = $event">
 </pagination-controls>
+<footer></footer>

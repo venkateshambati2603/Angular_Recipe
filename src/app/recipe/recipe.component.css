@@ -15,7 +15,9 @@ h1{
   margin-bottom: 10px;
   margin-bottom: 20px;
 }
-
+/* .paginator{
+  width: 100%;
+} */
 .title{
   font-weight: bold;
   color: black;
@@ -34,7 +36,6 @@ input::-webkit-calendar-picker-indicator {
 datalist::-webkit-calendar-picker-indicator {
   opacity: 10px;
 }
-
 .card{
   width: 20%;
   height: 40%;
