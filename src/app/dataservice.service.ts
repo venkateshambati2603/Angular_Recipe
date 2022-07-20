@@ -8,7 +8,7 @@ import { UserInformation } from './interface/result';
 })
 export class DataserviceService {
 
-  apiKey='ddf18f7264e0431d93e8539df9295884'
+  apiKey='e5bc6655f2d34025b055d1013ac2fe6e'
   searchResults: any;
   
   constructor(private http: HttpClient) { }
@@ -30,7 +30,7 @@ export class DataserviceService {
   getSingleView(id: number): Observable<UserInformation> {
     let queryParams = new HttpParams();
     return this.http.get<UserInformation>(`${this.url_}/${id}/information?includeNutrition=false&apiKey=${this.apiKey}`,{ params: queryParams });
-     
+    
   }
   // fetchResults(symbol:any) {
   //   // if (!symbol) this.hide();
@@ -43,7 +43,7 @@ export class DataserviceService {
 
 // apikey=e5bc6655f2d34025b055d1013ac2fe6e
 // apikey=ee0e1926a7e94aab8b79ed6043952ab8
-//apikey=36c5c6a85a62403db939eaec9d47
-/// ddf18f7264e0431d93e8539df9295884
+// apikey=36c5c6a85a62403db939eaec9d47
+// ddf18f7264e0431d93e8539df9295884
 // 932a462837b84703b3d70ae9576f4f6a
-//f09da238f6724dbc8ef9621629a810ca
+// f09da238f6724dbc8ef9621629a810ca

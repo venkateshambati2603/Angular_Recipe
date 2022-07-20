@@ -11,7 +11,6 @@ import { LoaderService } from './loader.service';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
-  // injector: any;
   constructor(private Loaderservice:LoaderService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {

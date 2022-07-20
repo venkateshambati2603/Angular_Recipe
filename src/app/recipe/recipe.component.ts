@@ -31,7 +31,6 @@ export class RecipeComponent implements OnInit {
   ) {}
 
   fetchResults(symbol:string) {
-    // if (!symbol) this.hide();
     this.http.get<any>(`${this.service.url_}/complexSearch?apiKey=${this.service.apiKey}&number=10&query=${symbol}`).subscribe(data =>{
       this.searchResults = data.results;
       this.searchDropdown = data.results;
@@ -43,16 +42,13 @@ export class RecipeComponent implements OnInit {
     this.changeDetectorRef.detectChanges();
     this.service.getRecipe(this.res).subscribe((data:any) => {
       this.datasource.data = data.results;
-      
       this.searchResults =data.results;
       this.obs = this.datasource.connect();
-      // console.log(this.searchDropdown)
     });
-    // this.fetchResults(this.searchedKeyword)
     this.datasource.paginator = this.paginator;
   }
   
-  searchFunc(val:string){
+  searchFunc(val:any){
     this.searchedKeyword=val;
     this.fetchResults(this.searchedKeyword)
 }

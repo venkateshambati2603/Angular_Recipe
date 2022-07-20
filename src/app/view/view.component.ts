@@ -23,8 +23,8 @@ export class ViewComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params['id']
     });
-    this.service.getSingleView(this.id).subscribe((response) => {
-      this.view=response
+    this.service.getSingleView(this.id).subscribe((res) => {
+      this.view=res
       console.log(this.view)
     });
   }
