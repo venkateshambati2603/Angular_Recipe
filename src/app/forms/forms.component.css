@@ -1,5 +1,5 @@
-div{
-    margin-left: 5px;
+.hell{
+    margin-left: 20px;
     margin-top: 5px;
 }
 .form-control.ng-touched.ng-invalid{
@@ -12,4 +12,20 @@ div{
 
 .btn :hover{
    background-color: aqua;
+}
+
+p{
+    font-size: 20px;
+}
+.card{
+    height: 500px;
+    width: 100%
+}
+
+.bt-group{
+    margin-left: 40%;
+}
+
+.btn{
+    margin-right: 10px;
 }

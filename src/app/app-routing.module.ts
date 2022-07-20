@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes,ExtraOptions } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 import { FormsComponent } from './forms/forms.component';
 import { RecipeComponent } from './recipe/recipe.component';
@@ -11,9 +11,12 @@ const routes: Routes = [
   {path: 'forms', component:FormsComponent},
   {path:'contact', component:ContactComponent}
 ];
-
+const routetoSection: ExtraOptions={
+  scrollPositionRestoration:'enabled',
+  anchorScrolling:'enabled'
+}
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,routetoSection)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

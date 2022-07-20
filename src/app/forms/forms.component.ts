@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
@@ -8,11 +9,22 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 })
 export class FormsComponent implements OnInit {
   
-  constructor(private formBuild: FormBuilder) { }
+  constructor(private formBuild: FormBuilder,
+    private route:Router) { }
 
   reactiveForm: FormGroup;
+  
+  myForm: FormGroup
+
 
   ngOnInit(): void {
+    this.myForm = this.formBuild.group({
+      password: this.formBuild.control(null),
+      confirmPassword: this.formBuild.control(null),
+    }, {
+      validators: this.passwordMatch('password', 'confirmPassword')
+    })
+
  
     this.reactiveForm =this.formBuild.group({
       'name': new FormControl('',[
@@ -27,6 +39,28 @@ export class FormsComponent implements OnInit {
       ])
     })
   }
+  
+  private passwordMatch(password: string, confirmPassword: string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const formGroup = control as FormGroup
+      const pass = formGroup.get(password)?.value
+      const confirmPass = formGroup.get(confirmPassword)?.value
+
+      if (pass === confirmPass) {
+        return null
+      } else {
+        return { valuesDoNotMatch: true }
+      }
+
+
+    }
+  }
+
+
+  get users(){
+    return this.reactiveForm.get("users") as FormArray;
+    }
+
   addName(){
     // console.log(this.reactiveForm.value)
     // console.log(this.reactiveForm.get('name')?.value)
@@ -36,5 +70,9 @@ export class FormsComponent implements OnInit {
     console.log(this.reactiveForm.value);
     this.reactiveForm.reset();
     localStorage.setItem('data',JSON.stringify(this.reactiveForm))
+  }
+
+  gotosection(part:any){
+    this.route.navigateByUrl('forms#'+part)
   }
 }

@@ -1,25 +1,25 @@
-<h1>Reactive Forms</h1>
-
+<h1 class="text-center mt-10"><strong class="text-success">Reactive Form</strong></h1>
+<div class="hell mb-5">
 <form [formGroup]="reactiveForm" >
-        <div class="form-group col-4 d-flex space-between">
+        <div class="form-group col-4 d-flex ">
             <label for="Name">Name:</label>
-            <input class="form-control" type="text" formControlName="name">
+            <input class="form-control " type="text" formControlName="name">
         </div>
-        <div>
+        <div class="col-md-2">
             <span class="text-danger" *ngIf="reactiveForm.get('name')?.hasError('required') && reactiveForm.get('name')?.touched">Name is Required</span>
             <span class="text-danger" *ngIf="reactiveForm.get('name')?.hasError('minlength') && reactiveForm.get('name')?.touched">Name should be more than 5 characters</span>
         </div>
 
-        <div class="form-group d-flex">
-            <label for="Age">Email:</label>
+        <div class="form-group col-4 mt-3 d-flex">
+            <label for="Age" >Email:</label>
             <input class="form-control" type="text" formControlName="email">
          
         </div>
-        <div>
+        <div >
             <span class="text-danger" *ngIf="reactiveForm.get('email')?.hasError('required') && reactiveForm.get('email')?.touched">Please Enter Valid Email</span>
             <span class="text-danger" *ngIf="reactiveForm.get('email')?.hasError('email') && reactiveForm.get('email')?.touched">Enter proper email</span>
         </div>
-        <div class="form-group d-flex">
+        <div class="form-group col-4 mt-3 d-flex">
             <label for="description">Description:</label>
             <textarea class="form-control" formControlName="desc"></textarea>
          
@@ -28,16 +28,16 @@
             <span class="text-danger" *ngIf="reactiveForm.get('desc')?.hasError('required') && reactiveForm.get('desc')?.touched">Description is Required</span>
         </div>
     
-        <div class="form-group d-flex flex-column" formArrayName="users">
+        <div class="form-group mt-3 col-4 " formArrayName="users">
             <ng-container *ngFor="let x of reactiveForm.get('users')['controls']; let i=index;" >
                 <label for="">Skills:</label>
                 <input class="form-control"  type="text" [formControlName]="i">
             </ng-container>
         </div>
-            <div class="form-group d-flex flex-column">
-                <span *ngIf="this.reactiveForm.get('users')?.hasError('required') && this.reactiveForm.get('users')?.hasError('touched')" >Rnter a name</span>
-            </div>
-            <button  class="btn btn-outline-secondary btn-sm" (click)="addName()">Add Name</button>
+            <!-- <div class="form-group d-flex flex-column">
+                <span *ngIf="this.reactiveForm.get('users')?.hasError('required') && this.reactiveForm.get('users')?.touched" >Rnter a name</span>
+            </div> -->
+            <button  class="btn btn-outline-secondary mt-3 btn-sm" (click)="addName()">Add Name</button>
         <div>
 
             <button type="button" [disabled]="reactiveForm.invalid"  (click)="onSubmit()" class="btn btn-primary mt-3">Submit</button>
@@ -50,13 +50,79 @@
             </div>
         </div> -->
 </form>
+</div>
+
+<h1 class="text-center mt-10"><strong class="text-success">Custom Validation Form</strong></h1>
+<div class="hell">
+
+    <form [formGroup]="myForm" class="form-container">
+        <label for="Password">Password:</label><br>
+        <mat-form-field>
+            <input matInput placeholder="Type your password..." formControlName="password">
+        </mat-form-field>
+        <!-- /Password field -->
+  
+        <br>
+        <div for="confirmPass">Confirm Password:</div>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Retype your password..." formControlName="confirmPassword">
+        </mat-form-field>
+        <div>
+            <span align="start" *ngIf="myForm.hasError?.('valuesDoNotMatch') ">
+                <div class="text-danger">Passwords do not match</div>
+            </span>
+        </div>
+        <!-- /Confirm password field -->
+        
+    </form>
+</div>
 
 
 
+<h1 class="text-center mt-10"><strong class="text-success">Hash Routing</strong></h1>
+<div class="bt-group">
+    <button type="button" (click)="gotosection('card1')" class="btn btn-primary">Section 1</button>
+    <button type="button" (click)="gotosection('card2')" class="btn btn-primary">Section 2</button>
+    <button type="button" (click)="gotosection('card3')" class="btn btn-primary">Section 3</button>
+    <button type="button" (click)="gotosection('card4')" class="btn btn-primary">Section 4</button>
+</div>
+<div class="row mt-3">
+    <div class="col-md-12">
+        <div class="card" id="card1">
+            <h2 class="card-header text-success">Kurt Cobain</h2>
+            <div class="card-body">
+            <p class="card-text">Kurt Donald Cobain (February 20, 1967 – c. April 5, 1994) was an American singer, songwriter and artist.[1] He was the guitarist, lead vocalist and primary songwriter of the rock band Nirvana. Through his angst-fueled songwriting and anti-establishment persona, Cobain's compositions widened the thematic conventions of mainstream rock. He was heralded as a spokesman of Generation X and is considered one of the most influential musicians in the history of alternative rock.
 
-<br>
-<br>
-<br>
+                Cobain formed Nirvana with Krist Novoselic and Aaron Burckhard in 1987 and established it as part of the Seattle music scene that later became known as grunge. After signing with major label DGC Records, Nirvana found global success with "Smells Like Teen Spirit" from their critically acclaimed second album Nevermind (1991). Although Cobain was hailed as the voice of his generation following Nirvana's sudden success, he resented this, believing his message and artistic vision had been misinterpreted by the public. In addition to "Smells Like Teen Spirit", Cobain wrote many other notable songs for Nirvana, including "Come as You Are", "Lithium", "In Bloom", "Something in the Way", "Heart-Shaped Box", "All Apologies", "About a Girl", "Aneurysm",[2] and "You Know You're Right".[3]
+                
+
+                During the last years of his life, Cobain struggled with heroin addiction and chronic health problems such as depression.[4] He also struggled with the personal and professional pressures of fame, and he had a tumultuous relationship with his wife, fellow musician Courtney Love.[5] In March 1994, Cobain overdosed on a combination of Champagne and Rohypnol, and he subsequently entered an intervention and underwent a detox program. On April 8, 1994, Cobain was found dead at his home in Seattle at the age of 27; police concluded he had died on April 5 from a self-inflicted shotgun wound to the head.
+                
+
+                Cobain was posthumously inducted into the Rock and Roll Hall of Fame, along with Nirvana bandmates Krist Novoselic and Dave Grohl, in their first year of eligibility in 2014. Rolling Stone included Cobain in its lists of the 100 Greatest Songwriters of All Time, 100 Greatest Guitarists, and 100 Greatest Singers of All Time. He was ranked 7th by MTV in the "22 Greatest Voices in Music". In 2006, he was placed 20th by Hit Parader on their list of the "100 Greatest Metal Singers of All Time".</p>
+            </div>
+        </div>
+        <div class="card" id="card2">
+            <h2 class="card-header">What is Lorem</h2>
+            <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum quasi ea debitis molestiae quam, laudantium saepe, consequatur ab quisquam vel dolores quibusdam sunt totam quo iste pariatur commodi voluptates. Mollitia sapiente excepturi aperiam delectus molestias provident eligendi assumenda quia, quidem a minus soluta cum obcaecati inventore, culpa, quaerat autem! Corrupti quia labore similique magni fuga eius quis! Ex dignissimos mollitia cupiditate saepe iste ut corrupti.</p>
+            </div>
+        </div>
+        <div class="card" id="card3">
+            <h2 class="card-header">What is Lorem</h2>
+            <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum quasi ea debitis molestiae quam, laudantium saepe, consequatur ab quisquam vel dolores quibusdam sunt totam quo iste pariatur commodi voluptates. Mollitia sapiente excepturi aperiam delectus molestias provident eligendi assumenda quia, quidem a minus soluta cum obcaecati inventore, culpa, quaerat autem! Corrupti quia labore similique magni fuga eius quis! Ex dignissimos mollitia cupiditate saepe iste ut corrupti.</p>
+            </div>
+        </div>
+        <div class="card" id="card4">
+            <h2 class="card-header">What is Lorem</h2>
+            <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum quasi ea debitis molestiae quam, laudantium saepe, consequatur ab quisquam vel dolores quibusdam sunt totam quo iste pariatur commodi voluptates. Mollitia sapiente excepturi aperiam delectus molestias provident eligendi assumenda quia, quidem a minus soluta cum obcaecati inventore, culpa, quaerat autem! Corrupti quia labore similique magni fuga eius quis! Ex dignissimos mollitia cupiditate saepe iste ut corrupti.</p>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- <form>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>

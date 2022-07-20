@@ -67,6 +67,7 @@
                 <div class="col-md-4">
                     <input formControlName="email" type="text" class="form-control">
                     <span class="text-danger" *ngIf="contacts.controls[i].get('email')?.hasError('required') && contacts.controls[i].get('email')?.touched">Enter Valid Email</span>
+                    <span class="text-danger" *ngIf="contacts.controls[i].get('email')?.hasError('email') && contacts.controls[i].get('email')?.touched">Email is not Invalid</span>
                 </div>
             </div>
         </ng-container>
