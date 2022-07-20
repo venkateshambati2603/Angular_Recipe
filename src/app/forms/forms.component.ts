@@ -15,7 +15,8 @@ export class FormsComponent implements OnInit {
   reactiveForm: FormGroup;
   
   myForm: FormGroup
-
+  form:[]
+  storedUser: any;
 
   ngOnInit(): void {
     this.myForm = this.formBuild.group({
@@ -68,8 +69,10 @@ export class FormsComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.reactiveForm.value);
-    this.reactiveForm.reset();
+    this.storedUser = this.reactiveForm.get('users').value;
+    console.log(this.storedUser)
     localStorage.setItem('data',JSON.stringify(this.reactiveForm))
+    this.reactiveForm.reset();
   }
 
   gotosection(part:any){

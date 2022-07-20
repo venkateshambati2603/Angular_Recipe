@@ -15,10 +15,10 @@
 }
 
 p{
-    font-size: 20px;
+    font-size: 15px;
 }
 .card{
-    height: 500px;
+    height: auto;
     width: 100%
 }
 
@@ -28,4 +28,10 @@ p{
 
 .btn{
     margin-right: 10px;
+}
+
+img{
+    margin-left: 38%;
+    width: 500px;
+    margin-bottom: 30px;
 }
