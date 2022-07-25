@@ -55,6 +55,7 @@ export class ContactComponent implements OnInit {
   onSave(){
     console.log(this.form.getRawValue())
     this.result = this.form.getRawValue();
+    this.form.reset()
   }
 
   addNewContacts(){
@@ -62,7 +63,7 @@ export class ContactComponent implements OnInit {
     console.log(this.contacts)
   }
 
-  removeContact(i:Required<number>){
+  removeContact(i: number){
     this.contacts.removeAt(i);
   }
 }

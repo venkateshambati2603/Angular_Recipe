@@ -37,10 +37,16 @@
             <!-- <div class="form-group d-flex flex-column">
                 <span *ngIf="this.reactiveForm.get('users')?.hasError('required') && this.reactiveForm.get('users')?.touched" >Rnter a name</span>
             </div> -->
-            <button  class="btn btn-outline-secondary mt-3 btn-sm" (click)="addSkill()">Add Skills</button>
+            <button [disabled]="this.users.controls[4]"  class="btn btn-outline-secondary mt-3 btn-sm" (click)="addSkill()">Add Skills</button>
         <div>
 
             <button type="button" [disabled]="reactiveForm.invalid"  (click)="onSubmit()" class="btn btn-primary mt-3">Submit</button>
+        </div>
+        <hr>
+        <div *ngIf="result">
+            <code>
+                <pre>{{result | json}}</pre>
+            </code>
         </div>
         <!-- <div formArrayName="users">
             <div *ngFor="let x of reactiveForm.get('users')['controls']; let i= index" [formGroup]="">
@@ -106,7 +112,7 @@
             <h2 class="card-header text-success">Jim Morrison</h2>
             <div class="card-body">
                 <img src="https://i0.wp.com/liveforlivemusic.com/wp-content/uploads/2016/07/Jim-Morrison-the-doors-29018208-1920-1200.jpg?resize=740%2C390&ssl=1" alt="">
-            <p class="card-text"><strong class="text-danger"> Douglas Morrison (December 8, 1943 – July 3, 1971)</strong> was an American singer, poet and songwriter who was the lead vocalist of the rock band the Doors. Due to his wild personality, poetic lyrics, distinctive voice, unpredictable and erratic performances, and the dramatic circumstances surrounding his life and early death, Morrison is regarded by music critics and fans as one of the most influential frontmen in rock history. Since his death, his fame has endured as one of popular culture's top rebellious and oft-displayed icons, representing the generation gap and youth counterculture.[3]
+            <p class="card-text"><strong class="text-danger">James Douglas Morrison (December 8, 1943 – July 3, 1971)</strong> was an American singer, poet and songwriter who was the lead vocalist of the rock band the Doors. Due to his wild personality, poetic lyrics, distinctive voice, unpredictable and erratic performances, and the dramatic circumstances surrounding his life and early death, Morrison is regarded by music critics and fans as one of the most influential frontmen in rock history. Since his death, his fame has endured as one of popular culture's top rebellious and oft-displayed icons, representing the generation gap and youth counterculture.[3]
 
                 Together with pianist Ray Manzarek, Morrison founded The Doors in 1965 in Venice, California. The group spent two years in obscurity until shooting to prominence with their number-one single in the United States, "Light My Fire", taken from their self-titled debut album. Morrison recorded a total of six studio albums with the Doors, all of which sold well and received critical acclaim. Morrison was well known for improvising spoken word poetry passages while the band played live. Manzarek said Morrison "embodied hippie counterculture rebellion".[4]
                 
@@ -119,7 +125,7 @@
             <h2 class="card-header text-success">Jimi Hendrix</h2>
             <div class="card-body">
                 <img src="https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/gettyimages-809667862-0-55c56addaf89e1bf623d6f3536d36af2.jpg" alt="">
-            <p class="card-text"><strong class="text-danger"> Marshall "Jimi" Hendrix (born Johnny Allen Hendrix; November 27, 1942 – September 18, 1970)</strong> was an American guitarist, singer, and songwriter. Although his mainstream career spanned only four years, he is widely regarded as one of the most influential electric guitarists in the history of popular music, and one of the most celebrated musicians of the 20th century. The Rock and Roll Hall of Fame describes him as "arguably the greatest instrumentalist in the history of rock music".[1]
+            <p class="card-text"><strong class="text-danger">James Marshall "Jimi" Hendrix (born Johnny Allen Hendrix; November 27, 1942 – September 18, 1970)</strong> was an American guitarist, singer, and songwriter. Although his mainstream career spanned only four years, he is widely regarded as one of the most influential electric guitarists in the history of popular music, and one of the most celebrated musicians of the 20th century. The Rock and Roll Hall of Fame describes him as "arguably the greatest instrumentalist in the history of rock music".[1]
 
                 Born in Seattle, Washington, Hendrix began playing guitar at the age of 15. In 1961, he enlisted in the US Army, but was discharged the following year. Soon afterward, he moved to Clarksville then Nashville, Tennessee, and began playing gigs on the chitlin' circuit, earning a place in the Isley Brothers' backing band and later with Little Richard, with whom he continued to work through mid-1965. He then played with Curtis Knight and the Squires before moving to England in late 1966 after bassist Chas Chandler of the Animals became his manager. Within months, Hendrix had earned three UK top ten hits with the Jimi Hendrix Experience: "Hey Joe", "Purple Haze", and "The Wind Cries Mary". He achieved fame in the US after his performance at the Monterey Pop Festival in 1967, and in 1968 his third and final studio album, Electric Ladyland, reached number one in the US. The double LP was Hendrix's most commercially successful release and his first and only number one album. The world's highest-paid performer,[2] he headlined the Woodstock Festival in 1969 and the Isle of Wight Festival in 1970 before his accidental death in London from barbiturate-related asphyxia on September 18, 1970.
                 
@@ -130,7 +136,7 @@
             <h2 class="card-header text-success">Ian Curtis</h2>
             <div class="card-body">
                 <img src="http://www.gelestatic.it/thimg/JD1tV2zeEcmcpPll_penDvqMdYw=/696x464/https%3A//www.gedistatic.it/content/gnn/img/lastampa/2021/12/17/080148759-a5c96a83-e0c2-49c4-bc41-2a82888e3b6d.jpg" alt="">
-            <p class="card-text"><strong class="text-danger"> Kevin Curtis (15 July 1956 – 18 May 1980)</strong> was an English singer-songwriter and musician. He was the lead singer and lyricist of the post-punk band Joy Division and recorded two albums with the group: Unknown Pleasures (1979) and Closer (1980). Curtis was known for his bass-baritone voice, dance style and songwriting typically filled with imagery of desolation, emptiness, and alienation.
+            <p class="card-text"><strong class="text-danger">Ian Kevin Curtis (15 July 1956 – 18 May 1980)</strong> was an English singer-songwriter and musician. He was the lead singer and lyricist of the post-punk band Joy Division and recorded two albums with the group: Unknown Pleasures (1979) and Closer (1980). Curtis was known for his bass-baritone voice, dance style and songwriting typically filled with imagery of desolation, emptiness, and alienation.
 
                 Curtis had epilepsy and depression and took his own life on the eve of Joy Division's first North American tour and shortly before the release of Closer. Shortly after his death, the three surviving members of the band reconstituted themselves as New Order.
                 

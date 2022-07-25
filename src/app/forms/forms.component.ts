@@ -13,7 +13,7 @@ export class FormsComponent implements OnInit {
     private route:Router) { }
 
   reactiveForm: FormGroup;
-  
+  result: any;
   myForm: FormGroup
   form:[]
   storedUser: any;
@@ -35,7 +35,7 @@ export class FormsComponent implements OnInit {
       'desc': new FormControl('',Validators.required),
       'email': new FormControl('',[Validators.required,Validators.email]),
       'users': new FormArray([
-        new FormControl('',Validators.required),
+        new FormControl(''),
         
       ])
     })
@@ -65,17 +65,18 @@ export class FormsComponent implements OnInit {
   addSkill(){
     // console.log(this.reactiveForm.value)
     // console.log(this.reactiveForm.get('name')?.value)
-    (<FormArray>this.reactiveForm.get('users')).push(new FormControl('',Validators.required) )
+    (<FormArray>this.reactiveForm.get('users')).push(new FormControl('') )
   }
   onSubmit(){
     console.log(this.reactiveForm.value);
+    this.result = this.reactiveForm.value
     this.storedUser = this.reactiveForm.get('users').value;
     console.log(this.storedUser)
     // localStorage.setItem('data',JSON.stringify(this.reactiveForm))
     this.reactiveForm.reset();
   }
 
-  gotosection(part:any){
-    this.route.navigateByUrl('forms#'+part)
+  gotosection(musicians:any){
+    this.route.navigateByUrl('forms#'+musicians)
   }
 }
