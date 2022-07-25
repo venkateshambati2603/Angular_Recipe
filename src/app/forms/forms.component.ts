@@ -62,7 +62,7 @@ export class FormsComponent implements OnInit {
     return this.reactiveForm.get("users") as FormArray;
     }
 
-  addName(){
+  addSkill(){
     // console.log(this.reactiveForm.value)
     // console.log(this.reactiveForm.get('name')?.value)
     (<FormArray>this.reactiveForm.get('users')).push(new FormControl('',Validators.required) )
@@ -71,7 +71,7 @@ export class FormsComponent implements OnInit {
     console.log(this.reactiveForm.value);
     this.storedUser = this.reactiveForm.get('users').value;
     console.log(this.storedUser)
-    localStorage.setItem('data',JSON.stringify(this.reactiveForm))
+    // localStorage.setItem('data',JSON.stringify(this.reactiveForm))
     this.reactiveForm.reset();
   }
 

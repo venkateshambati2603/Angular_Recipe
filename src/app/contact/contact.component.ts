@@ -59,6 +59,7 @@ export class ContactComponent implements OnInit {
 
   addNewContacts(){
     this.contacts.push(this.contactFrom());
+    console.log(this.contacts)
   }
 
   removeContact(i:Required<number>){

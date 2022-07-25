@@ -37,7 +37,7 @@
             <!-- <div class="form-group d-flex flex-column">
                 <span *ngIf="this.reactiveForm.get('users')?.hasError('required') && this.reactiveForm.get('users')?.touched" >Rnter a name</span>
             </div> -->
-            <button  class="btn btn-outline-secondary mt-3 btn-sm" (click)="addName()">Add Skills</button>
+            <button  class="btn btn-outline-secondary mt-3 btn-sm" (click)="addSkill()">Add Skills</button>
         <div>
 
             <button type="button" [disabled]="reactiveForm.invalid"  (click)="onSubmit()" class="btn btn-primary mt-3">Submit</button>
@@ -80,14 +80,14 @@
 
 <h1 class="text-center mt-10"><strong class="text-success">Hash Routing</strong></h1>
 <div class="bt-group">
-    <button type="button" (click)="gotosection('card1')" class="btn btn-primary">Kurt Cobain</button>
-    <button type="button" (click)="gotosection('card2')" class="btn btn-primary">Jim Morrison</button>
-    <button type="button" (click)="gotosection('card3')" class="btn btn-primary">Jimi Hendrix</button>
-    <button type="button" (click)="gotosection('card4')" class="btn btn-primary">Ian Curtis</button>
+    <button type="button" (click)="gotosection('KurtCobain')" class="btn btn-primary">Kurt Cobain</button>
+    <button type="button" (click)="gotosection('JimMorrison')" class="btn btn-primary">Jim Morrison</button>
+    <button type="button" (click)="gotosection('JimiHendrix')" class="btn btn-primary">Jimi Hendrix</button>
+    <button type="button" (click)="gotosection('IanCurtis')" class="btn btn-primary">Ian Curtis</button>
 </div>
 <div class="row mt-3">
     <div class="col-md-12">
-        <div class="card" id="card1">
+        <div class="card" id="KurtCobain">
             <h2 class="card-header text-success">Kurt Cobain</h2>
             <div class="card-body">
                 <img src="https://api.time.com/wp-content/uploads/2014/03/3220062.jpg" alt="">
@@ -102,7 +102,7 @@
                 Cobain was posthumously inducted into the Rock and Roll Hall of Fame, along with Nirvana bandmates Krist Novoselic and Dave Grohl, in their first year of eligibility in 2014. Rolling Stone included Cobain in its lists of the 100 Greatest Songwriters of All Time, 100 Greatest Guitarists, and 100 Greatest Singers of All Time. He was ranked 7th by MTV in the "22 Greatest Voices in Music". In 2006, he was placed 20th by Hit Parader on their list of the "100 Greatest Metal Singers of All Time".</p>
             </div>
         </div>
-        <div class="card" id="card2">
+        <div class="card" id="JimMorrison">
             <h2 class="card-header text-success">Jim Morrison</h2>
             <div class="card-body">
                 <img src="https://i0.wp.com/liveforlivemusic.com/wp-content/uploads/2016/07/Jim-Morrison-the-doors-29018208-1920-1200.jpg?resize=740%2C390&ssl=1" alt="">
@@ -115,7 +115,7 @@
                 Although the Doors recorded two more albums after Morrison died, his death severely affected the band's fortunes, and they split up two years later. In 2011, a Rolling Stone readers' pick placed Jim Morrison in fifth position on the magazine's "Best Lead Singers of All Time",[9] and in another Rolling Stone list of "The 100 Greatest Singers of All Time", he was ranked 47th.[10] He was also ranked the 22nd greatest singer in rock by Classic Rock Magazine.[11] In 1993, Morrison was inducted into the Rock and Roll Hall of Fame along with the other Doors members.</p>
             </div>
         </div>
-        <div class="card" id="card3">
+        <div class="card" id="JimiHendrix">
             <h2 class="card-header text-success">Jimi Hendrix</h2>
             <div class="card-body">
                 <img src="https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/gettyimages-809667862-0-55c56addaf89e1bf623d6f3536d36af2.jpg" alt="">
@@ -126,7 +126,7 @@
                 Hendrix was inspired by American rock and roll and electric blues. He favored overdriven amplifiers with high volume and gain, and was instrumental in popularizing the previously undesirable sounds caused by guitar amplifier feedback. He was also one of the first guitarists to make extensive use of tone-altering effects units in mainstream rock, such as fuzz distortion, Octavia, wah-wah, and Uni-Vibe. He was the first musician to use stereophonic phasing effects in recordings. Holly George-Warren of Rolling Stone commented: "Hendrix pioneered the use of the instrument as an electronic sound source. Players before him had experimented with feedback and distortion, but Hendrix turned those effects and others into a controlled, fluid vocabulary every bit as personal as the blues with which he began."</p>
             </div>
         </div>
-        <div class="card" id="card4">
+        <div class="card" id="IanCurtis">
             <h2 class="card-header text-success">Ian Curtis</h2>
             <div class="card-body">
                 <img src="http://www.gelestatic.it/thimg/JD1tV2zeEcmcpPll_penDvqMdYw=/696x464/https%3A//www.gedistatic.it/content/gnn/img/lastampa/2021/12/17/080148759-a5c96a83-e0c2-49c4-bc41-2a82888e3b6d.jpg" alt="">

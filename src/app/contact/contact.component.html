@@ -6,7 +6,7 @@
             <div class="form-control ">
                 <input class="form-control" formControlName="fName" type="text" class="form-control">
                 <span class="text-danger" *ngIf="this.form.get('fName')?.hasError('required') && this.form.get('fName')?.touched">Enter Valid Name</span>
-                <!-- <span class="text-danger" *ngIf="this.form.get('fname')?.hasError('minlength') && this.form.get('fname')?.touched">Name should be more than 5 characters</span> -->
+                <span class="text-danger" *ngIf="this.form.get('fName')?.hasError('minlength') && this.form.get('fName')?.touched">Name should be more than 5 characters</span>
             </div>
  
 
@@ -52,7 +52,7 @@
         <br>
         <ng-container formArrayName="contacts" *ngFor="let contact of contacts.controls; let i = index">
 
-            <b>Contact {{i+1}}</b> <button class="btn btn-outline-danger mx-3 mt-3" (click)="removeContact(i)">Delete</button>
+            <b>Contact {{i+1}}</b> <button *ngIf="i>0" class="btn btn-outline-danger mx-3 mt-3" (click)="removeContact(i)">Delete</button>
             <hr>
 
             <div class="row mt-2" [formGroupName]="i">
@@ -72,10 +72,10 @@
             </div>
         </ng-container>
         <br>
-        <button class="btn btn-outline-primary" (click)="addNewContacts()">Add New Contacts</button>
+        <button class="btn btn-outline-primary" [disabled]="contacts.controls[3]" (click)="addNewContacts()">Add New Contacts</button>
     </div>
     <div class="card-footer text-center">
-        <button (click)="onSave()" [disabled]="form.invalid" class="btn btn-primary">Save</button>
+        <button  (click)="onSave()" [disabled]="form.invalid" class="btn btn-primary">Save</button>
     </div>
 </div>
 
