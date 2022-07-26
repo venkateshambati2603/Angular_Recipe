@@ -78,7 +78,7 @@ export class ControlContainerComponent implements OnInit {
   }
   onClick(){
     this.resultInfo=this.userForm.value
-    console.log(this.resultInfo)
-    this.userForm.reset();
+    // console.log(this.resultInfo)
+    // this.userForm.reset();
   }
   }

@@ -19,11 +19,11 @@
     <app-company></app-company>
     <div>
       <button mat-button class="btn btn-success m-2 " [disabled]="userForm.invalid" (click)="onClick()">Submit</button>
-  </div>
+    </div>
   </mat-step>
 </mat-stepper>
 
-<div>
+<div >
   <mat-tab-group *ngIf="userForm.valid" mat-align-tabs="start">
     <mat-tab label="Details">
       <ul>
@@ -68,4 +68,4 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-<pre>{{resultInfo | json}}</pre>
+<!-- <pre>{{resultInfo | json}}</pre> -->
