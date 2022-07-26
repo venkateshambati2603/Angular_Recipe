@@ -1,0 +1,41 @@
+<ng-container [formGroup]="form">
+    <div formGroupName="info">
+        <label >First Name</label>
+            <input matInput class="form-control" type="text" formControlName="firtName">
+            <div>
+                <span class="text-danger" *ngIf="this.form.controls['info'].get('firtName')?.hasError('required') && this.form.controls['info'].get('firtName')?.touched">Name is Required</span>
+            </div>
+            <!-- <span class="text-danger" *ngIf="reactiveForm.get('name')?.hasError('minlength') && reactiveForm.get('name')?.touched">Name should be more than 5 characters</span> -->
+            
+            <label >last Name</label>
+            <input matInput class="form-control col-2" type="text" formControlName="lastName">
+            <label >Maiden Name</label>
+            <input matInput class="form-control " type="text" formControlName="maidenName">
+            <label >Email</label>
+            <input matInput class="form-control " type="text" formControlName="email">
+            <div>
+                <span class="text-danger" *ngIf="this.form.controls['info'].get('email')?.hasError('required') && this.form.controls['info'].get('email')?.touched">Email is Required</span>
+                <span class="text-danger" *ngIf="this.form.controls['info'].get('email')?.hasError('email') && this.form.controls['info'].get('email')?.touched">Enter Proper Email</span>
+                
+            </div>
+            <label >Age</label>
+            <input matInput class="form-control " type="text" formControlName="age">
+            <div>
+                <span class="text-danger" *ngIf="this.form.controls['info'].get('age')?.hasError('required') && this.form.controls['info'].get('age')?.touched">Age should be in numbers</span>
+            </div>
+    <label >Phone</label>
+    <input matInput class="form-control " type="text" formControlName="phone">
+    <div>
+        <span class="text-danger" *ngIf="this.form.controls['info'].get('phone')?.hasError('required') && this.form.controls['info'].get('phone')?.touched">Phone No required</span>
+        <span class="text-danger" *ngIf="this.form.controls['info'].get('phone')?.hasError('pattern') && this.form.controls['info'].get('phone')?.touched">Should Contain only numbers and not more than 10</span>
+    </div>
+    <label >Gender</label>
+    <input matInput class="form-control " type="text" formControlName="gender">
+    <label >Date of Birth</label>
+    <input matInput class="form-control " type="text" formControlName="birthDate">
+</div>
+
+<div>
+    <button class="btn btn-outline-secondary" [disabled]="form.get('info').invalid"  matStepperNext>Next</button>
+</div>
+</ng-container>

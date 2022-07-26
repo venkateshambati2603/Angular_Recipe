@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe';
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+   
 }
 

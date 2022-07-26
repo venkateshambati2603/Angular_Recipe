@@ -1,6 +1,7 @@
-*{
-    margin-left: 5px;
-    margin-top: 5px;
+input{
+    display: flex;
+    flex-direction: column;
+    padding-bottom:3px ;
 }
 .form-control.ng-touched.ng-invalid{
     border: 1px solid red;

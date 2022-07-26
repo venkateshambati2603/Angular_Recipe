@@ -63,8 +63,6 @@ export class FormsComponent implements OnInit {
     }
 
   addSkill(){
-    // console.log(this.reactiveForm.value)
-    // console.log(this.reactiveForm.get('name')?.value)
     (<FormArray>this.reactiveForm.get('users')).push(new FormControl('') )
   }
   onSubmit(){

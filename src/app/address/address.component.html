@@ -1,0 +1,17 @@
+<ng-container [formGroup]="form">
+    <div formGroupName="address">
+        <label >Address</label>
+        <input matInput class="form-control" type="text" formControlName="addresss">
+        <label >City</label>
+        <input matInput class="form-control" type="text" formControlName="city">
+        <label >co-ordinates</label>
+        <input matInput class="form-control" type="text" formControlName="coordinates">
+        <label >Postal Code</label>
+        <input matInput class="form-control" type="text" formControlName="postalCode">
+        <label >State</label>
+        <input matInput class="form-control" type="text" formControlName="state">
+    </div>
+    <div>
+        <button class="btn btn-outline-secondary" [disabled]="form.get('address').invalid"  matStepperNext>Next</button>
+      </div>
+</ng-container>

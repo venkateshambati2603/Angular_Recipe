@@ -1,9 +1,12 @@
 <header >
   <button class="btn btn-secondary" [routerLink]="['/forms'] ">Go To Forms</button>  
   <button class="btn btn-primary" [routerLink]="['/recipe'] ">Go To Recipes</button>  
-  <button class="btn btn-secondary" [routerLink]="['/contact'] ">Go To Contact</button>  
+  <button class="btn btn-secondary" [routerLink]="['/contact'] ">Go To Contact</button>
+  <button class="btn btn-secondary" [routerLink]="['/control-container'] ">Go To Control Container</button>
+
 </header>
-<router-outlet class="ro">
+<router-outlet>
   <app-loader></app-loader>
 </router-outlet>
+
 <!-- <footer></footer> -->

@@ -1,0 +1,18 @@
+<ng-container [formGroup]="form">
+    <div formGroupName="bank">
+
+        <label >Card Expire</label>
+        <input matInput class="form-control" type="text" formControlName="cardExpire">
+        <label >card Number</label>
+        <input matInput class="form-control" type="text" formControlName="cardNumber">
+        <label >Card Type</label>
+        <input matInput class="form-control" type="text" formControlName="cardType">
+        <label >Currency</label>
+        <input matInput class="form-control" type="text" formControlName="currency">
+        <label >Iban</label>
+        <input matInput class="form-control" type="text" formControlName="iban">
+    </div>
+    <div>
+        <button class="btn btn-outline-secondary" [disabled]="form.get('bank').invalid" matStepperNext>Next</button>
+      </div>
+</ng-container>
