@@ -12,7 +12,8 @@
         <label >Iban</label>
         <input matInput class="form-control" type="text" formControlName="iban">
     </div>
-    <div>
-        <button class="btn btn-outline-secondary" [disabled]="form.get('bank').invalid" matStepperNext>Next</button>
-      </div>
+    <footer class="footer mt-5 p-2 ">
+        <button class="btn btn-primary" matStepperPrevious>Back</button>
+        <button class="btn btn-success " [disabled]="form.get('bank').invalid"  matStepperNext>Next</button>
+    </footer>
 </ng-container>

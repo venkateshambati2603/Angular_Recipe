@@ -4,3 +4,9 @@
 h1{
     margin-left: 40%;
 }
+button{
+    margin-right:10px;
+}
+.footer{
+    background-color: rgb(202, 228, 235);
+}

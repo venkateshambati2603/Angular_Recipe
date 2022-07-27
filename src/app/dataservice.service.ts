@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { UserInformation } from './interface/result';
+import { FormGroupDirective } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class DataserviceService {
 
   apiKey='e5bc6655f2d34025b055d1013ac2fe6e'
   searchResults: any;
-  
+
   constructor(private http: HttpClient) { }
   
   url_ ="https://api.spoonacular.com/recipes"
@@ -32,13 +33,11 @@ export class DataserviceService {
     return this.http.get<UserInformation>(`${this.url_}/${id}/information?includeNutrition=false&apiKey=${this.apiKey}`,{ params: queryParams });
     
   }
-  // fetchResults(symbol:any) {
-  //   // if (!symbol) this.hide();
-  //   this.http.get<any>(`https://api.spoonacular.com/recipes/autocomplete?number=10&query=${symbol}&apiKey=${this.apiKey}`).subscribe(data =>{
-  //     this.searchResults = data;
-  //     console.log(this.searchResults)
-  //   })
+ 
+  // onClick(res:any){
+  //   this.resultInfo=this.rootFormGroup.value
   // }
+  
 }
 
 // apikey=e5bc6655f2d34025b055d1013ac2fe6e

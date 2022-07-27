@@ -13,5 +13,8 @@ input{
     border: 1px solid green;
 }
 button{
-    margin-top: 5px;
+    margin-right:10px;
+}
+.footer{
+    background-color: rgb(202, 228, 235);
 }

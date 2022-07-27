@@ -21,13 +21,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FormsComponent } from './forms/forms.component';
 import { ContactComponent } from './contact/contact.component';
-
+import {MatIconModule} from '@angular/material/icon';
 import {MatStepperModule} from '@angular/material/stepper';
 import { InfoComponent } from './info/info.component';
 import { AddressComponent } from './address/address.component';
 import { BankComponent } from './bank/bank.component';
 import { CompanyComponent } from './company/company.component';
 import { ControlContainerComponent } from './control-container/control-container.component';
+
 
 @NgModule({
   declarations: [
@@ -42,9 +43,11 @@ import { ControlContainerComponent } from './control-container/control-container
     BankComponent,
     InfoComponent,
     CompanyComponent,
-    ControlContainerComponent
+    ControlContainerComponent,
+ 
   ],
   imports: [
+    MatIconModule,
     MatFormFieldModule,
     MatStepperModule,
     ReactiveFormsModule,
