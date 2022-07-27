@@ -11,7 +11,7 @@ export class BankComponent implements OnInit {
   constructor(private rootFormGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
-    this.form=this.rootFormGroup.control
+    this.form=this.rootFormGroup.control.get('bank') as FormGroup
   }
 
 }

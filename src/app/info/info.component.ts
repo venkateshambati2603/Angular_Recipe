@@ -7,13 +7,13 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-  // @Input() formGroupName!: string
+  
   form: FormGroup
   constructor(private rootformGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
-    this.form =this.rootformGroup.control;
-    // console.log(this.form)
+    this.form =this.rootformGroup.control.get('info') as FormGroup;
+    console.log(this.form)
   }
 
 }

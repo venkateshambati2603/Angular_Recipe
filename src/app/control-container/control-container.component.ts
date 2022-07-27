@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataserviceService } from '../dataservice.service';
 
@@ -8,18 +8,14 @@ import { DataserviceService } from '../dataservice.service';
   styleUrls: ['./control-container.component.css']
 })
 export class ControlContainerComponent implements OnInit {
+
   resultInfo: any;
   isLinear=true
   res;
   userForm: FormGroup;
-  constructor(private fb: FormBuilder,
-    private service:DataserviceService) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    // this.service.onClick(this.res).subscribe((data:any)=>{
-    //   this.resultInfo
-    // })
-    console.log(this.resultInfo)
     this.userForm = this.fb.group({
       info:this.fb.group({
         firtName:['',
@@ -86,8 +82,6 @@ export class ControlContainerComponent implements OnInit {
  
   onClick(){
     this.resultInfo=this.userForm.value
-    // console.log(this.resultInfo)
-    // this.userForm.reset();
   }
   reset(){
     this.userForm.reset()

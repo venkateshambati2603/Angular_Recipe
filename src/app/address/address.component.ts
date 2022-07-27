@@ -11,7 +11,7 @@ export class AddressComponent implements OnInit {
   constructor(private rootformGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
-    this.form =this.rootformGroup.control;
+    this.form =this.rootformGroup.control.get('address') as FormGroup;
   }
 
 }
