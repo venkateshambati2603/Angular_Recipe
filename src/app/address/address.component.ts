@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
@@ -7,11 +7,12 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
+  @Input() formGroupName: string
   form: FormGroup
   constructor(private rootformGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
-    this.form =this.rootformGroup.control.get('address') as FormGroup;
+    this.form =this.rootformGroup.control.get(this.formGroupName) as FormGroup;
   }
 
 }

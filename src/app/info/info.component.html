@@ -15,8 +15,7 @@
             <input matInput class="input " type="text" formControlName="email">
             <div>
                 <span class="text-danger" *ngIf="this.form.controls['email']?.hasError('email') && this.form.controls['email'].touched">Enter Proper Email</span>
-                <span class="text-danger" *ngIf="this.form.controls['email']?.hasError('required') && this.form.controls['email']?.touched">Email is Required</span>
-                
+                <span class="text-danger" *ngIf="this.form.controls['email']?.hasError('required') && this.form.controls['email']?.touched">Email is Required</span> 
             </div>
             <label >Age</label>
             <input matInput class="input " type="text" formControlName="age">

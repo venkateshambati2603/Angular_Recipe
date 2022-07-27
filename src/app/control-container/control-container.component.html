@@ -1,21 +1,21 @@
-<h1 class=" mt-10"><strong class="text-success">Control-Container</strong></h1>
+<h1 class=" mt-10"><strong class="text-danger">Control-Container</strong></h1>
 <mat-stepper [linear]="isLinear" [formGroup]="userForm">
   <mat-step  [stepControl]="userForm.controls['info']" state="info">
     <ng-template  matStepLabel>Details</ng-template>
-    <app-info></app-info>
+    <app-info formGroupName="info"></app-info>
   </mat-step>
   <mat-step  [stepControl]="userForm.controls['address']" state="address">
     <ng-template matStepLabel>Address</ng-template>
-   <app-address></app-address>
+   <app-address formGroupName="address"></app-address>
    
   </mat-step>
   <mat-step [stepControl]="userForm.controls['bank']" state="bank">
-    <ng-template matStepLabel>Bank</ng-template>
-    <app-bank></app-bank>
+    <ng-template  matStepLabel>Bank</ng-template>
+    <app-bank formGroupName="bank"></app-bank>
   </mat-step>
   <mat-step  [stepControl]="userForm.controls['company']" state="company">
     <ng-template matStepLabel>Company</ng-template>
-    <app-company></app-company>
+    <app-company formGroupName="company"></app-company>
   <footer class="footer mt-5 p-2 ">
       <button class="btn btn-primary" matStepperPrevious>Back</button>
       <button mat-button class="btn btn-success" [disabled]="userForm.invalid" matStepperNext (click)="onClick()">Submit</button>
@@ -26,8 +26,8 @@
     <ng-template matStepLabel>Submitted</ng-template>
     <div class="d-flex justify-content-around pb-20">
       <div *ngIf="userForm.valid" class="example-card">
-        <mat-card-header class="text-primary h3">Personal Details</mat-card-header>
-        <mat-card-content>
+        <label class="text-primary h3">Personal Details</label>
+        <div>
           <ul>
             <li>First Name : {{userForm.get('info')['controls'].firtName.value}}</li>
             <li>Last Name : {{userForm.get('info')['controls'].lastName.value}}</li>
@@ -38,10 +38,10 @@
             <li>Gender: {{userForm.get('info')['controls'].gender.value}}</li>
             <li>BirthDate: {{userForm.get('info')['controls'].birthDate.value}}</li>
           </ul>
-        </mat-card-content>
+        </div>
       </div>
       <div *ngIf="userForm.valid" class="example-card">
-        <mat-card-header class="text-primary h3">Address</mat-card-header>
+        <label class="text-primary h3">Address</label>
         <mat-card-content>
           <ul>
             <li>Address: {{userForm.get('address')['controls'].addresss.value}}</li>
@@ -55,20 +55,20 @@
     </div>
     <div class="d-flex justify-content-around">
       <div *ngIf="userForm.valid" class="example-card">
-        <mat-card-header class="text-primary h3">Bank</mat-card-header>
-        <mat-card-content>
+        <label class="text-primary h3">Bank</label>
+        <div>
           <ul>
             <li>Card Expire: {{userForm.get('bank')['controls'].cardExpire.value}}</li>
             <li>Card Number: {{userForm.get('bank')['controls'].cardNumber.value}}</li>
             <li>Card Type: {{userForm.get('bank')['controls'].cardType.value}}</li>
-            <li>Card Value{{userForm.get('bank')['controls'].currency.value}}</li>
+            <li>Card Value: {{userForm.get('bank')['controls'].currency.value}}</li>
             <li>Currency :{{userForm.get('bank')['controls'].iban.value}}</li>
           </ul>
-        </mat-card-content>
+        </div>
       </div>
       <div *ngIf="userForm.valid" class="example-card">
-        <mat-card-header class="text-primary h3">Company</mat-card-header>
-        <mat-card-content>
+        <label class="text-primary h3">Company</label>
+        <div>
           <ul>
             <li>Bank Name: {{userForm.get('company')['controls'].name.value}}</li>
             <li>Title: {{userForm.get('company')['controls'].title.value}}</li>
@@ -78,9 +78,10 @@
             <li>State: {{userForm.get('company')['controls'].state.value}}</li>
             <li>Department: {{userForm.get('company')['controls'].department.value}}</li>
           </ul>
-        </mat-card-content>
+        </div>
       </div>
     </div>
+    <button class="stepbtn btn btn-primary" matStepperPrevious>Back</button>
     <!-- <div>
       <mat-tab-group *ngIf="userForm.valid" mat-align-tabs="start">
         <mat-tab label="Details">
