@@ -1,9 +1,9 @@
 <ng-container [formGroup]="form">
-    <div >
+    <div class="bank">
 
         <label >Card Expire</label>
         <input matInput class="input" type="text" formControlName="cardExpire">
-        <label >card Number</label>
+        <label >Card Number</label>
         <input matInput class="input" type="text" formControlName="cardNumber">
         <label >Card Type</label>
         <input matInput class="input" type="text" formControlName="cardType">
@@ -13,7 +13,7 @@
         <input matInput class="input" type="text" formControlName="iban">
     </div>
     <footer class="footer mt-5 p-2 ">
-        <button class="btn btn-primary" matStepperPrevious>Back</button>
-        <button class="btn btn-success " [disabled]="form.invalid"  matStepperNext>Next</button>
+        <button class="btn-back" matStepperPrevious>Back</button>
+        <button class="btn-next " [disabled]="form.invalid"  matStepperNext>Next</button>
     </footer>
 </ng-container>

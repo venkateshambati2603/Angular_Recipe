@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { DataserviceService } from '../dataservice.service';
 
 @Component({
   selector: 'app-address',
@@ -9,9 +10,13 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 export class AddressComponent implements OnInit {
   @Input() formGroupName: string
   form: FormGroup
-  constructor(private rootformGroup: FormGroupDirective) { }
+  res;
+  pinCode
+  constructor(private rootformGroup: FormGroupDirective,
+    private service:DataserviceService) { }
 
   ngOnInit(): void {
+    
     this.form =this.rootformGroup.control.get(this.formGroupName) as FormGroup;
   }
 

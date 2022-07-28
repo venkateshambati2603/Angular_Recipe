@@ -1,5 +1,5 @@
 <ng-container [formGroup]="form">
-    <div >
+    <div class="info" >
         <label >First Name</label>
             <input matInput class="input" type="text" formControlName="firtName">
             <div>
@@ -7,7 +7,7 @@
             </div>
             <!-- <span class="text-danger" *ngIf="reactiveForm.get('name')?.hasError('minlength') && reactiveForm.get('name')?.touched">Name should be more than 5 characters</span> -->
             
-            <label >last Name</label>
+            <label >Last Name</label>
             <input matInput class="input" type="text" formControlName="lastName">
             <label >Maiden Name</label>
             <input matInput class="input " type="text" formControlName="maidenName">
@@ -35,7 +35,6 @@
 </div>
 
 <footer class="footer mt-5 p-2 ">
-    <button class="btn btn-success " [disabled]="form.invalid"  matStepperNext>Next</button>
-   
+    <button class="btnn" [disabled]="form.invalid"  matStepperNext>Next</button>
 </footer>
 </ng-container>

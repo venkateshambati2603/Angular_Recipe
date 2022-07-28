@@ -12,3 +12,6 @@ input{
 .input.ng-touched.ng-valid{
     border: 1px solid green;
 }
+.company{
+    margin-left: 35%;
+}

@@ -13,7 +13,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form =this.rootformGroup.control.get(this.formGroupName) as FormGroup;
-    console.log(this.form)
+    // console.log(this.form)
   }
 
 }

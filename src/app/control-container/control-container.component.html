@@ -17,9 +17,9 @@
     <ng-template matStepLabel>Company</ng-template>
     <app-company formGroupName="company"></app-company>
   <footer class="footer mt-5 p-2 ">
-      <button class="btn btn-primary" matStepperPrevious>Back</button>
-      <button mat-button class="btn btn-success" [disabled]="userForm.invalid" matStepperNext (click)="onClick()">Submit</button>
-      <button mat-button class="btn btn-primary" [disabled]="userForm.invalid" (click)="reset()">Reset</button>
+      <button class="btn-back" matStepperPrevious>Back</button>
+      <button mat-button class="btn-submit" [disabled]="userForm.invalid" matStepperNext (click)="onClick()">Submit</button>
+      <button mat-button class="btn-reset" [disabled]="userForm.invalid" (click)="reset()">Reset</button>
   </footer>
   </mat-step>
   <mat-step>
@@ -29,14 +29,14 @@
         <label class="text-primary h3">Personal Details</label>
         <div>
           <ul>
-            <li>First Name : {{userForm.get('info')['controls'].firtName.value}}</li>
-            <li>Last Name : {{userForm.get('info')['controls'].lastName.value}}</li>
-            <li>Maiden Name: {{userForm.get('info')['controls'].maidenName.value}}</li>
-            <li>Email: {{userForm.get('info')['controls'].email.value}}</li>
-            <li>age: {{userForm.get('info')['controls'].age.value}}</li>
-            <li>Phone: {{userForm.get('info')['controls'].phone.value}}</li>
-            <li>Gender: {{userForm.get('info')['controls'].gender.value}}</li>
-            <li>BirthDate: {{userForm.get('info')['controls'].birthDate.value}}</li>
+            <li><b>First Name :</b> {{userForm.get('info')['controls'].firtName.value}}</li>
+            <li><b>Last Name :</b> {{userForm.get('info')['controls'].lastName.value}}</li>
+            <li><b>Maiden Name:</b> {{userForm.get('info')['controls'].maidenName.value}}</li>
+            <li><b>Email:</b> {{userForm.get('info')['controls'].email.value}}</li>
+            <li><b>Age:</b> {{userForm.get('info')['controls'].age.value}}</li>
+            <li><b>Phone:</b> {{userForm.get('info')['controls'].phone.value}}</li>
+            <li><b>Gender:</b> {{userForm.get('info')['controls'].gender.value}}</li>
+            <li><b>BirthDate:</b> {{userForm.get('info')['controls'].birthDate.value}}</li>
           </ul>
         </div>
       </div>
@@ -44,11 +44,11 @@
         <label class="text-primary h3">Address</label>
         <mat-card-content>
           <ul>
-            <li>Address: {{userForm.get('address')['controls'].addresss.value}}</li>
-            <li>City :{{userForm.get('address')['controls'].city.value}}</li>
-            <li>Coordinate: {{userForm.get('address')['controls'].coordinates.value}}</li>
-            <li>Postal Code: {{userForm.get('address')['controls'].postalCode.value}}</li>
-            <li>State: {{userForm.get('address')['controls'].state.value}}</li>
+            <li><b>Address:</b> {{userForm.get('address')['controls'].addresss.value}}</li>
+            <li><b>City:</b>{{userForm.get('address')['controls'].city.value}}</li>
+            <li><b>Coordinate:</b> {{userForm.get('address')['controls'].coordinates.value}}</li>
+            <li><b>Postal Code:</b> {{userForm.get('address')['controls'].postalCode.value}}</li>
+            <li><b>State:</b> {{userForm.get('address')['controls'].state.value}}</li>
           </ul>
         </mat-card-content>
       </div>
@@ -58,11 +58,11 @@
         <label class="text-primary h3">Bank</label>
         <div>
           <ul>
-            <li>Card Expire: {{userForm.get('bank')['controls'].cardExpire.value}}</li>
-            <li>Card Number: {{userForm.get('bank')['controls'].cardNumber.value}}</li>
-            <li>Card Type: {{userForm.get('bank')['controls'].cardType.value}}</li>
-            <li>Card Value: {{userForm.get('bank')['controls'].currency.value}}</li>
-            <li>Currency :{{userForm.get('bank')['controls'].iban.value}}</li>
+            <li><b>Card Expire:</b> {{userForm.get('bank')['controls'].cardExpire.value}}</li>
+            <li><b>Card Number:</b> {{userForm.get('bank')['controls'].cardNumber.value}}</li>
+            <li><b>Card Type:</b> {{userForm.get('bank')['controls'].cardType.value}}</li>
+            <li><b>Card Value:</b> {{userForm.get('bank')['controls'].currency.value}}</li>
+            <li><b>Currency :</b>{{userForm.get('bank')['controls'].iban.value}}</li>
           </ul>
         </div>
       </div>
@@ -70,18 +70,18 @@
         <label class="text-primary h3">Company</label>
         <div>
           <ul>
-            <li>Bank Name: {{userForm.get('company')['controls'].name.value}}</li>
-            <li>Title: {{userForm.get('company')['controls'].title.value}}</li>
-            <li>Address: {{userForm.get('company')['controls'].addresss.value}}</li>
-            <li>City: {{userForm.get('company')['controls'].city.value}}</li>
-            <li>Postal Code: {{userForm.get('company')['controls'].postalCode.value}}</li>
-            <li>State: {{userForm.get('company')['controls'].state.value}}</li>
-            <li>Department: {{userForm.get('company')['controls'].department.value}}</li>
+            <li><b>Company Name:</b> {{userForm.get('company')['controls'].name.value}}</li>
+            <li><b>Title:</b> {{userForm.get('company')['controls'].title.value}}</li>
+            <li><b>Address:</b> {{userForm.get('company')['controls'].addresss.value}}</li>
+            <li><b>City:</b> {{userForm.get('company')['controls'].city.value}}</li>
+            <li><b>Postal Code:</b> {{userForm.get('company')['controls'].postalCode.value}}</li>
+            <li><b>State:</b> {{userForm.get('company')['controls'].state.value}}</li>
+            <li><b>Department:</b> {{userForm.get('company')['controls'].department.value}}</li>
           </ul>
         </div>
       </div>
     </div>
-    <button class="stepbtn btn btn-primary" matStepperPrevious>Back</button>
+    <button class="stepbtn" matStepperPrevious>Back</button>
     <!-- <div>
       <mat-tab-group *ngIf="userForm.valid" mat-align-tabs="start">
         <mat-tab label="Details">

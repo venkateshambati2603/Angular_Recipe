@@ -19,6 +19,7 @@ export class DataserviceService {
   searchData:any= []
   id!: number
   res!:string
+  pinCode
   
   getRecipe(res:any){
     // this.cuisine = data;
@@ -37,7 +38,14 @@ export class DataserviceService {
   // onClick(res:any){
   //   this.resultInfo=this.rootFormGroup.value
   // }
-  
+  getPinCode(pin:number){
+   this.http.get('https://api.worldpostallocations.com?postalcode=110001&countrycode=IN').subscribe((data:any)=>{
+    this.pinCode=data.result[0].postalCode
+
+    // console.log(this.pinCode)
+    return this.pinCode 
+    })
+  }
 }
 
 // apikey=e5bc6655f2d34025b055d1013ac2fe6e

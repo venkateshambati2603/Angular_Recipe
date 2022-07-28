@@ -4,13 +4,38 @@
 h1{
     margin-left: 40%;
 }
-button{
-    margin-right:10px;
+.btn-submit{
+    background-color: green;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+    margin-left: 5px
 }
-.footer{
+.btn-back{
+    background-color: rgb(39, 161, 222);
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+    margin-left: 43%;
+}
+.btn-reset{
+    background-color: rgb(39, 161, 222);
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+b{
+    font-size: 15px;
+}
+/* .footer{
     background-color: rgb(202, 228, 235);
-}
+} */
 
 .stepbtn{
    margin-left: 45%;
+   background-color: rgb(39, 161, 222);
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
 }

@@ -1,5 +1,5 @@
 <ng-container [formGroup]="form">
-    <div>
+    <div class="add">
         <label >Address</label>
         <input matInput class="input" type="text" formControlName="addresss">
         <label >City</label>
@@ -8,11 +8,15 @@
         <input matInput class="input" type="text" formControlName="coordinates">
         <label >Postal Code</label>
         <input matInput class="input" type="text" formControlName="postalCode">
+        <div>
+            <span *ngIf="this.form.controls['postalCode']?.hasError('required') && this.form.controls['postalCode']?.touched"></span>
+            <span *ngIf="this.form.controls['postalCode']?.hasError('apply') && this.form.controls['postalCode']?.touched"></span>
+        </div>
         <label >State</label>
         <input matInput class="input" type="text" formControlName="state">
     </div>
     <footer class="footer mt-5 p-2 ">
-        <button class="btn btn-primary"  matStepperPrevious>Back</button>
-        <button class="btn btn-success " [disabled]="form.invalid"  matStepperNext>Next</button>
+        <button class="btn-back"  matStepperPrevious>Back</button>
+        <button class="btn-next " [disabled]="form.invalid"  matStepperNext>Next</button>
     </footer>
 </ng-container>

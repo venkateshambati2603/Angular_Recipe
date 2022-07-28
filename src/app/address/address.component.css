@@ -15,6 +15,24 @@ input{
 button{
     margin-right:10px;
 }
-.footer{
+/* .footer{
     background-color: rgb(202, 228, 235);
+} */
+
+.btn-next{
+    background-color: green;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+
+}
+.btn-back{
+    background-color: rgb(39, 161, 222);
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+    margin-left: 45%;
+}
+.add{
+    margin-left: 35%;
 }

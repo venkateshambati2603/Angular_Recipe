@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { DataserviceService } from '../dataservice.service';
 
 
 @Component({
@@ -12,10 +13,16 @@ export class ControlContainerComponent implements OnInit {
   resultInfo: any;
   isLinear=true
   res;
+  pinCode =[];
   userForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private service: DataserviceService) { }
 
   ngOnInit(): void {
+
+    
+
+
     this.userForm = this.fb.group({
       info:this.fb.group({
         firtName:['',
@@ -43,8 +50,8 @@ export class ControlContainerComponent implements OnInit {
         [Validators.required]],
         coordinates:['',
         [Validators.required]],
-        postalCode:['',
-        [Validators.required]],
+        postalCode:new FormControl('',
+        {validators: this.pinCodeValidator('pincode')}),
         state:['',
         [Validators.required]],
       }),
@@ -78,10 +85,33 @@ export class ControlContainerComponent implements OnInit {
       })
     })
   }
+  private pinCodeValidator(pincode: string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const formGroup = control as FormGroup
+      const pass = this.service.getPinCode(this.res)
+  
+      console.log(pass)
+      // const confirmPass = formGroup.get(confirmPassword)?.value
 
+      if (pass!=pass) {
+        return this.pinCode
+      } else {
+        return  Validators.required
+      }
+
+
+    }
+  }
+  // pinCoderValidator(){
+  //  this.service.getPinCode(this.res).subscribe((data:any)=>{
+  //     console.log(data)
+  //     this.pinCode=data
+  //   })
+  // }
  
   onClick(){
     this.resultInfo=this.userForm.value
+    alert('Do you want to submit the form?')
   }
   reset(){
     this.userForm.reset()
