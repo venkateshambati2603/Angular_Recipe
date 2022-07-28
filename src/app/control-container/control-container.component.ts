@@ -14,6 +14,7 @@ export class ControlContainerComponent implements OnInit {
   isLinear=true
   res;
   pinCode =[];
+  pin;
   userForm: FormGroup;
   constructor(private fb: FormBuilder,
     private service: DataserviceService) { }
@@ -51,7 +52,8 @@ export class ControlContainerComponent implements OnInit {
         coordinates:['',
         [Validators.required]],
         postalCode:new FormControl('',
-        {validators: this.pinCodeValidator('pincode')}),
+        {validators: this.pinCodeValidator('pincode')}
+        ),
         state:['',
         [Validators.required]],
       }),
@@ -88,24 +90,29 @@ export class ControlContainerComponent implements OnInit {
   private pinCodeValidator(pincode: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const formGroup = control as FormGroup
-      const pass = this.service.getPinCode(this.res)
-  
-      console.log(pass)
+      this.pin = this.service.getPinCode(this.res).subscribe((data:any)=>{
+        this.pinCode=data.result[0].postalCode
+        console.log(this.pinCode)
+      })
+      // const val= this.pinCode
       // const confirmPass = formGroup.get(confirmPassword)?.value
 
-      if (pass!=pass) {
-        return this.pinCode
-      } else {
-        return  Validators.required
-      }
-
-
+      if(this.pin){
+        return null;
+    } else{
+      return {"invalidZip":true};
+    }
     }
   }
   // pinCoderValidator(){
-  //  this.service.getPinCode(this.res).subscribe((data:any)=>{
+  //  this.pin= this.service.getPinCode(this.res).subscribe((data:any)=>{
   //     console.log(data)
-  //     this.pinCode=data
+  //     this.pinCode=data.result[0].postalCode
+  //     if(this.pin){
+  //       return null;
+  //   } else{
+  //     return {"invalidZip":true};
+  //   }
   //   })
   // }
  

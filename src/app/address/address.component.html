@@ -10,7 +10,7 @@
         <input matInput class="input" type="text" formControlName="postalCode">
         <div>
             <span *ngIf="this.form.controls['postalCode']?.hasError('required') && this.form.controls['postalCode']?.touched"></span>
-            <span *ngIf="this.form.controls['postalCode']?.hasError('apply') && this.form.controls['postalCode']?.touched"></span>
+            <span *ngIf="this.form.controls['postalCode']?.hasError('valuesDoNotMatch') && this.form.controls['postalCode']?.touched"></span>
         </div>
         <label >State</label>
         <input matInput class="input" type="text" formControlName="state">
