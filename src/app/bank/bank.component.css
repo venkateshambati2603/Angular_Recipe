@@ -1,9 +1,9 @@
-input{
-    width: 40%;
+.card-container{
     display: flex;
     flex-direction: column;
-    padding-bottom:3px ;
-    border: 1px solid black;
+    justify-content: center;
+    width: 40%;
+    margin-left: 30%;
 }
 .input.ng-touched.ng-invalid{
     border: 1px solid red;
@@ -11,20 +11,6 @@ input{
 
 .input.ng-touched.ng-valid{
     border: 1px solid green;
-}
-.btn-next{
-    background-color: green;
-    padding: 10px 15px;
-    color: white;
-    border-radius: 10px;
-    margin-left: 5px;
-}
-.btn-back{
-    background-color: rgb(39, 161, 222);
-    padding: 10px 15px;
-    color: white;
-    border-radius: 10px;
-    margin-left: 45%;
 }
 .bank{
     margin-left: 35%;

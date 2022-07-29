@@ -1,19 +1,30 @@
 <ng-container [formGroup]="form">
-    <div class="bank">
-
-        <label >Card Expire</label>
-        <input matInput class="input" type="text" formControlName="cardExpire">
-        <label >Card Number</label>
-        <input matInput class="input" type="text" formControlName="cardNumber">
-        <label >Card Type</label>
-        <input matInput class="input" type="text" formControlName="cardType">
-        <label >Currency</label>
-        <input matInput class="input" type="text" formControlName="currency">
-        <label >Iban</label>
-        <input matInput class="input" type="text" formControlName="iban">
-    </div>
+    <mat-card class="card-container">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="cardExpire" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="cardNumber" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>address</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="cardType" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="currency" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Postal Code</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="iban" />
+        </mat-form-field>
+    </mat-card>
     <footer class="footer mt-5 p-2 ">
-        <button class="btn-back" matStepperPrevious>Back</button>
-        <button class="btn-next " [disabled]="form.invalid"  matStepperNext>Next</button>
+        <button mat-raised-button color="accent" style="margin-left: 45%;" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" [disabled]="form.invalid" style="margin-left: 8px;" matStepperNext>Next</button>
     </footer>
 </ng-container>
+
+

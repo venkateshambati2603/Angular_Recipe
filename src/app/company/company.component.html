@@ -1,19 +1,38 @@
 <ng-container [formGroup]="form">
-    <div class="company" >
-    <label >Name</label>
-    <input matInput class="input" type="text" formControlName="name">
-    <label >title</label>
-    <input matInput class="input" type="text" formControlName="title">
-    <label >Address</label>
-    <input matInput class="input" type="text" formControlName="addresss">
-    <label >City</label>
-    <input matInput class="input" type="text" formControlName="city">
-    <label >State</label>
-    <input matInput class="input" type="text" formControlName="state">
-    <label for="">Postal Code</label>
-    <input matInput class="input" type="text" formControlName="postalCode">
-    <label for="">Department</label>
-    <input matInput class="input" type="text" formControlName="department">
-</div>
+    <mat-card class="card-container">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="title" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>address</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="addresss" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="city" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Postal Code</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="postalCode" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>State</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="state" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="department" />
+        </mat-form-field>
+    </mat-card>
 
 </ng-container>
+
+
+
+
+

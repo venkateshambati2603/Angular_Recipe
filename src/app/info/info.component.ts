@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-info',
@@ -9,11 +10,14 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 export class InfoComponent implements OnInit {
   @Input() formGroupName: string
   form: FormGroup
+  @ViewChild('stepper') stepper: MatStepper
   constructor(private rootformGroup: FormGroupDirective) { }
 
   ngOnInit(): void {
     this.form =this.rootformGroup.control.get(this.formGroupName) as FormGroup;
-    // console.log(this.form)
+    console.log(this.form)
   }
-
+  move(index: number) {
+    this.stepper.selectedIndex = index;
+  }
 }

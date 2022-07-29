@@ -28,7 +28,8 @@ import { AddressComponent } from './address/address.component';
 import { BankComponent } from './bank/bank.component';
 import { CompanyComponent } from './company/company.component';
 import { ControlContainerComponent } from './control-container/control-container.component';
-
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -44,9 +45,9 @@ import { ControlContainerComponent } from './control-container/control-container
     InfoComponent,
     CompanyComponent,
     ControlContainerComponent,
- 
   ],
   imports: [
+    MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
     MatStepperModule,
@@ -69,7 +70,11 @@ import { ControlContainerComponent } from './control-container/control-container
   ],
   providers: [{provide: HTTP_INTERCEPTORS,
     useClass: RequestInterceptor,
-    multi: true,}],
+    multi: true,
+  },{
+    provide: STEPPER_GLOBAL_OPTIONS,
+    useValue: { displayDefaultIndicatorType: false }
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

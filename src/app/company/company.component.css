@@ -1,14 +1,14 @@
-input{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    padding-bottom:3px ;
-    border: 1px solid black;
-}
+
 .input.ng-touched.ng-invalid{
     border: 1px solid red;
 }
-
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin-left: 30%;
+}
 .input.ng-touched.ng-valid{
     border: 1px solid green;
 }

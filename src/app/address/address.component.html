@@ -1,22 +1,31 @@
 <ng-container [formGroup]="form">
-    <div class="add">
-        <label >Address</label>
-        <input matInput class="input" type="text" formControlName="addresss">
-        <label >City</label>
-        <input matInput class="input" type="text" formControlName="city">
-        <label >co-ordinates</label>
-        <input matInput class="input" type="text" formControlName="coordinates">
-        <label >Postal Code</label>
-        <input matInput class="input" type="text" formControlName="postalCode">
-        <div>
-            <span *ngIf="this.form.controls['postalCode']?.hasError('required') && this.form.controls['postalCode']?.touched"></span>
-            <span *ngIf="this.form.controls['postalCode']?.hasError('valuesDoNotMatch') && this.form.controls['postalCode']?.touched"></span>
-        </div>
-        <label >State</label>
-        <input matInput class="input" type="text" formControlName="state">
-    </div>
+    <mat-card class="card-container">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="addresss" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="city" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>address</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="coordinates" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="postalCode" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Postal Code</mat-label>
+            <input matInput placeholder="Ex. Jane" formControlName="state" />
+        </mat-form-field>
+    </mat-card>
     <footer class="footer mt-5 p-2 ">
-        <button class="btn-back"  matStepperPrevious>Back</button>
-        <button class="btn-next " [disabled]="form.invalid"  matStepperNext>Next</button>
+        <button mat-raised-button color="accent" style="margin-left: 45%;" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" [disabled]="form.invalid"  matStepperNext>Next</button>
     </footer>
 </ng-container>
+
+
+

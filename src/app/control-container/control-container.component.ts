@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
 import { DataserviceService } from '../dataservice.service';
-
 
 @Component({
   selector: 'app-control-container',
@@ -16,6 +16,7 @@ export class ControlContainerComponent implements OnInit {
   pinCode =[];
   pin;
   userForm: FormGroup;
+  @ViewChild('stepper') stepper: MatStepper
   constructor(private fb: FormBuilder,
     private service: DataserviceService) { }
 
@@ -92,7 +93,7 @@ export class ControlContainerComponent implements OnInit {
       const formGroup = control as FormGroup
       this.pin = this.service.getPinCode(this.res).subscribe((data:any)=>{
         this.pinCode=data.result[0].postalCode
-        console.log(this.pinCode)
+        // console.log(this.pinCode)
       })
       // const val= this.pinCode
       // const confirmPass = formGroup.get(confirmPassword)?.value
