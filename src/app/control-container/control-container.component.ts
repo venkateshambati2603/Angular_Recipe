@@ -124,4 +124,9 @@ export class ControlContainerComponent implements OnInit {
   reset(){
     this.userForm.reset()
   }
+
+
+  move(index: number) {
+    this.stepper.selectedIndex = index;
+  }
   }
